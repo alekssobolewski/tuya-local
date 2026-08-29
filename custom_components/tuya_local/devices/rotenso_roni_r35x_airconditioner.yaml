@@ -246,14 +246,14 @@ entities:
   - entity: switch
     translation_key: uv_sterilization
     category: config
-    hidden: true  # not available on this model
+    hidden: unavailable  # not available on this model
     dps:
       - id: 26
         type: boolean
         name: switch
 
   - entity: switch
-    name: IClean (evaporator cleaning)
+    name: iClean (evaporator cleaning)
     category: config
     dps:
       - id: 27
@@ -326,7 +326,7 @@ entities:
     name: Aux heat
     class: running
     category: diagnostic
-    hidden: true  # not available on this model
+    hidden: unavailable  # not available on this model
     dps:
       - id: 103
         type: boolean
@@ -335,7 +335,7 @@ entities:
   - entity: switch
     name: Hot wind
     category: config
-    hidden: true  # not available on this model
+    hidden: unavailable  # not available on this model
     dps:
       - id: 104
         type: boolean
@@ -344,7 +344,7 @@ entities:
   - entity: switch
     name: Cool wind
     category: config
-    hidden: true  # not available on this model
+    hidden: unavailable  # not available on this model
     dps:
       - id: 105
         type: boolean
@@ -354,7 +354,7 @@ entities:
     name: Week timer 1
     category: config
     icon: "mdi:calendar-clock"
-    hidden: true  # advanced: need to understand format to use
+    hidden: unavailable  # advanced: need to understand format to use
     dps:
       - id: 107
         type: string
@@ -365,7 +365,7 @@ entities:
     name: Week timer 2
     category: config
     icon: "mdi:calendar-clock"
-    hidden: true  # advanced: need to understand format to use
+    hidden: unavailable  # advanced: need to understand format to use
     dps:
       - id: 109
         type: string
@@ -376,6 +376,7 @@ entities:
     name: Filter blocked
     class: problem
     category: diagnostic
+    hidden: unavailable # id does not seem to be working
     dps:
       - id: 110
         type: boolean
@@ -537,7 +538,6 @@ entities:
         optional: true
         name: sensor
         mapping:
-          # Since we don't have any observations, cover many possibilities
           - dps_val: ""
             value: false
           - dps_val: AA==
