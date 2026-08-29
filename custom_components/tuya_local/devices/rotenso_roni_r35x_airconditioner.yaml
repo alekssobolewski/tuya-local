@@ -75,7 +75,7 @@ entities:
               - dps_val: "6"
                 value: high
               - dps_val: "7"
-                value: strong
+                value: turbo
       - id: 8
         type: boolean
         name: preset_mode
@@ -177,8 +177,20 @@ entities:
             value: surround
             hidden: true  # not offered by the manufacturer app for this model
 
+  - entity: button
+    name: Turbo
+    icon: "mdi:fan-speed-3"
+    category: config
+    dps:
+      - id: 5
+        type: string
+        name: button
+        mapping:
+          - dps_val: "7"
+            value: true
+
   - entity: switch
-    name: Anti-mould
+    name: iAIR (ANTI-MILDEW)
     category: config
     dps:
       - id: 9
@@ -210,30 +222,52 @@ entities:
       - id: 13
         type: boolean
         name: switch
+        mapping:
+          - dps_val: true
+            icon: "mdi:led-off"
+          - dps_val: false
+            icon: "mdi:led-on"
 
   - entity: switch
-    translation_key: sound
+    name: Mute
     category: config
     dps:
       - id: 16
         type: boolean
         name: switch
+        mapping:
+          - dps_val: false
+            value: true
+            icon: "mdi:volume-off"
+          - dps_val: true
+            value: false
+            icon: "mdi:volume-high"
 
   - entity: switch
     translation_key: uv_sterilization
     category: config
+    hidden: true  # not available on this model
     dps:
       - id: 26
         type: boolean
         name: switch
 
   - entity: switch
-    translation_key: evaporator_cleaning
+    name: IClean (evaporator cleaning)
     category: config
     dps:
       - id: 27
         type: boolean
         name: switch
+      - id: 1
+        name: available
+        type: boolean
+        hidden: true
+        mapping:
+          - dps_val: true
+            value: false
+          - dps_val: false
+            value: true
 
   - entity: fan
     translation_key: ventilation
@@ -280,7 +314,8 @@ entities:
             value: fahrenheit
 
   - entity: switch
-    name: 8 degree heating
+    name: SMART 8°C
+    icon: "mdi:heat-wave"
     category: config
     dps:
       - id: 102
@@ -291,6 +326,7 @@ entities:
     name: Aux heat
     class: running
     category: diagnostic
+    hidden: true  # not available on this model
     dps:
       - id: 103
         type: boolean
@@ -299,6 +335,7 @@ entities:
   - entity: switch
     name: Hot wind
     category: config
+    hidden: true  # not available on this model
     dps:
       - id: 104
         type: boolean
@@ -307,6 +344,7 @@ entities:
   - entity: switch
     name: Cool wind
     category: config
+    hidden: true  # not available on this model
     dps:
       - id: 105
         type: boolean
@@ -366,20 +404,9 @@ entities:
         name: sensor
         unit: rpm
         class: measurement
-
-  - entity: number
-    name: Outdoor fan speed
-    category: config
-    hidden: true  # should be controlled by the unit
-    icon: "mdi:fan"
-    dps:
       - id: 118
         type: integer
-        name: value
-        unit: rpm
-        range:
-          min: 0
-          max: 200
+        name: target
         mapping:
           - scale: 0.1
 
@@ -396,33 +423,12 @@ entities:
       - id: 120
         type: integer
         name: target
-
-  - entity: number
-    name: Compressor frequency
-    category: config
-    hidden: true  # should be controlled by the unit
-    class: frequency
-    dps:
       - id: 121
         type: integer
-        name: value
-        unit: Hz
-        range:
-          min: 0
-          max: 150
-
-  - entity: number
-    name: EEV opening
-    category: config
-    hidden: true  # should be controlled by the unit
-    icon: "mdi:valve"
-    dps:
+        name: set_frequency
       - id: 122
         type: integer
-        name: value
-        range:
-          min: 0
-          max: 500
+        name: eev_opening
 
   - entity: switch
     name: Soft wind
@@ -476,33 +482,32 @@ entities:
         mapping:
           - dps_val: "0"
             value: "off"
+            constraint: mode
+            conditions:
+              - dps_val: ["0", "2", "3", "4"]
+                invalid: true
           - dps_val: "1"
             value: standard
+            constraint: mode
+            conditions:
+              - dps_val: ["0", "2", "3", "4"]
+                invalid: true
           - dps_val: "2"
             value: elderly
+            constraint: mode
+            conditions:
+              - dps_val: ["0", "2", "3", "4"]
+                invalid: true
           - dps_val: "3"
             value: child
-
-  - entity: sensor
-    class: energy
-    hidden: unavailable
-    dps:
-      - id: 127
-        type: integer
-        name: sensor
-        unit: kWh
-        class: total_increasing
-        optional: true
-        mapping:
-          - scale: 100
-      - id: 127
-        type: integer
-        name: available
-        optional: true
-        mapping:
-          - dps_val: null
-            value: false
-          - value: true
+            constraint: mode
+            conditions:
+              - dps_val: ["0", "2", "3", "4"]
+                invalid: true
+      - id: 4
+        name: mode
+        type: string
+        hidden: true
 
   - entity: select
     name: Generator mode
@@ -516,20 +521,11 @@ entities:
           - dps_val: "0"
             value: disabled
           - dps_val: "1"
-            value: level_1
+            value: LV1
           - dps_val: "2"
-            value: level_2
+            value: LV2
           - dps_val: "3"
-            value: level_3
-          - dps_val: "4"
-            value: level_4
-            hidden: true  # not offered by the manufacturer app for this model
-          - dps_val: "5"
-            value: level_5
-            hidden: true  # not offered by the manufacturer app for this model
-          - dps_val: "6"
-            value: level_6
-            hidden: true  # not offered by the manufacturer app for this model
+            value: LV3
 
   - entity: binary_sensor
     class: problem
