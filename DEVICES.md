@@ -162,7 +162,8 @@
 - Nedis ACMB1WT12 portable air conditioner
 - Olimpia Splendid Unico Pro air conditioner
 - Qlima SC 7035S and MS-AC 5002 air conditioners
-- Rotenso Roni R35WI, Roni X, and Roni R35X [R18]
+- Rotenso Roni R35WI and Roni X
+- Rotenso Roni R35X R18 mini split air conditioner
 - Royal Clima Fresh air conditioner
 - Royal Sovereign RSAI-12SA mini split air conditioner
 - Sencor MT7048C air conditioner
@@ -1327,7 +1328,7 @@ port and password.
 - Stahlmann Smart water leak control system
 - Sunlary indoor plant watering system
 - Wasserstein AquaPal water monitor
-- WD-01GDE irrigation controller 
+- WD-01GDE irrigation controller
 - Zemismart DP-WBS01 8-zone sprinkler controller (also sold as Benexmart and other brands)
 
 ### Miscellaneous
@@ -1485,7 +1486,7 @@ port and password.
 - Nice Digi door lock
 - Orion DL021HA lock
 - O'TU R1O1 fingerprint door lock
-- Parkside PBB-A1 water timer 
+- Parkside PBB-A1 water timer
 - Positivo Smart keypad and voice locks
 - Primebras Athenas lock
 - PT216/PT19DB-2 temperature and humidity sensor
