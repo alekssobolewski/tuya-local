@@ -251,6 +251,11 @@ entities:
       - id: 26
         type: boolean
         name: switch
+      - id: 26
+        type: boolean
+        name: available
+        mapping:
+          - value: false
 
   - entity: switch
     name: iClean (evaporator cleaning)
@@ -331,6 +336,11 @@ entities:
       - id: 103
         type: boolean
         name: sensor
+      - id: 103
+        type: boolean
+        name: available
+        mapping:
+          - value: false
 
   - entity: switch
     name: Hot wind
@@ -340,6 +350,11 @@ entities:
       - id: 104
         type: boolean
         name: switch
+      - id: 104
+        type: boolean
+        name: available
+        mapping:
+          - value: false
 
   - entity: switch
     name: Cool wind
@@ -349,12 +364,17 @@ entities:
       - id: 105
         type: boolean
         name: switch
+      - id: 105
+        type: boolean
+        name: available
+        mapping:
+          - value: false
 
   - entity: text
     name: Week timer 1
     category: config
     icon: "mdi:calendar-clock"
-    hidden: unavailable  # advanced: need to understand format to use
+    hidden: true  # advanced: need to understand format to use
     dps:
       - id: 107
         type: string
@@ -365,7 +385,7 @@ entities:
     name: Week timer 2
     category: config
     icon: "mdi:calendar-clock"
-    hidden: unavailable  # advanced: need to understand format to use
+    hidden: true  # advanced: need to understand format to use
     dps:
       - id: 109
         type: string
@@ -376,7 +396,6 @@ entities:
     name: Filter blocked
     class: problem
     category: diagnostic
-    hidden: unavailable # id does not seem to be working
     dps:
       - id: 110
         type: boolean
