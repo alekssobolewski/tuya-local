@@ -162,7 +162,7 @@
 - Nedis ACMB1WT12 portable air conditioner
 - Olimpia Splendid Unico Pro air conditioner
 - Qlima SC 7035S and MS-AC 5002 air conditioners
-- Rotenso Roni R35WI and Roni X
+- Rotenso Roni R35WI, Roni X, and Roni R35X [R18]
 - Royal Clima Fresh air conditioner
 - Royal Sovereign RSAI-12SA mini split air conditioner
 - Sencor MT7048C air conditioner
