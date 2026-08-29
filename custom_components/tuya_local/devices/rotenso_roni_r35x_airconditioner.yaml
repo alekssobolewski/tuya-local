@@ -190,7 +190,8 @@ entities:
             value: true
 
   - entity: switch
-    name: iAIR (ANTI-MILDEW)
+    name: iAIR (anti-mildew)
+    icon: mdi:bacteria-outline
     category: config
     dps:
       - id: 9
@@ -224,9 +225,9 @@ entities:
         name: switch
         mapping:
           - dps_val: true
-            icon: "mdi:led-off"
+            icon: "mdi:lightbulb-off"
           - dps_val: false
-            icon: "mdi:led-on"
+            icon: "mdi:lightbulb-on"
 
   - entity: switch
     name: Mute
@@ -258,7 +259,8 @@ entities:
           - value: false
 
   - entity: switch
-    name: iClean (evaporator cleaning)
+    name: iClean (evaporator self-clean)
+    icon: mdi:broom
     category: config
     dps:
       - id: 27
