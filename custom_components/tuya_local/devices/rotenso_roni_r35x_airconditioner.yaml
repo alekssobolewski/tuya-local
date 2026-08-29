@@ -279,7 +279,7 @@ entities:
   - entity: fan
     translation_key: ventilation
     category: config
-    hidden: unavailable
+    hidden: unavailable # not available on this model
     dps:
       - id: 39
         type: boolean
@@ -455,7 +455,7 @@ entities:
   - entity: switch
     name: Soft wind
     category: config
-    hidden: unavailable
+    hidden: unavailable # not available on this model
     dps:
       - id: 123
         type: string
