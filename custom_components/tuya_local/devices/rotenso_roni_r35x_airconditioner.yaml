@@ -585,6 +585,7 @@ entities:
 
   - entity: switch
     name: Vertical swing
+    icon: mdi:pan-vertical
     category: config
     hidden: true  # duplicates dp 31 but in more simplistic way
     dps:
@@ -599,6 +600,7 @@ entities:
 
   - entity: switch
     name: Horizontal swing
+    icon: mdi:pan-horizontal
     category: config
     hidden: true  # duplicates dp 34 but in more simplistic way
     dps:
