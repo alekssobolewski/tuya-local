@@ -1001,6 +1001,7 @@ of device.
 - Outon Smart Lamp
 - Peteme recessed lighting
 - Pinar SmartLux door lights
+- Pixbee Illumi ambient light
 - PowerAsia RGB 6-inch recessed lighting
 - RGB48 RGBIC string light
 - Richelieu tunable white LED puck light (166142030)
